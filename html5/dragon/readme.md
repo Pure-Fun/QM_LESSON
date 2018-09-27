@@ -14,3 +14,9 @@
     天生的bug，会有间隙，来自于换行符，
     1. 删除换行符
     2. 父亲上font-size为0
+
+- 自适应网页RWD
+  rem 相对单位，动态的生成html font-size
+  结合10rem 方案 flexible
+  1. dom html
+  2. 将设备宽度的1/10

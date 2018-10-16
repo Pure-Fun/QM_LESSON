@@ -30,9 +30,9 @@
   }
   .nav-box, .btn-box {
       height: 45px;
-      text-align: center;
+      text-align: center;   /* text-align 属性规定元素中的文本的水平对齐方式。 */
       background: green;
-      line-height: 45px;
+      line-height: 45px;    /* 行间距 */
   }
   .cont-box {
       width: 100%;
@@ -40,7 +40,11 @@
       overflow: hidden;
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
-  }
+  }  /* -webkit-overflow-scrolling 属性控制元素在移动设备上是否使用滚动回弹效果.
+                              auto: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。
+                              touch: 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容
+                              会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和
+                              滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文。 */
   </style>
 </head>
 <body>

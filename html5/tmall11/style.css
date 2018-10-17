@@ -6,23 +6,40 @@
 
 html, body {
     height: 100%;
+    font-family: sans-serif;
 }
-.html_content, .item-section {
-    height: 100%;
+
+div {
+    display: block;
 }
+
 .item-section {
-    background-color: red;
+    background-color: #ee0a3b;
     position: relative;
     min-height: 100%;
+    font-size: 12px;
+}
+.item-section_header {
+    text-align: center;
 }
 .item-section_header img {
     width: 10rem;
 }
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 ul, li {
+    list-style: none;
+}
+ol, ul {
     list-style: none;
 }
 .item-section ul {
     padding: 0.1333333rem;
+}
+fieldset, img {
+    border: 0;
 }
 .flag {
     display: table;
@@ -32,14 +49,76 @@ ul, li {
 }
 .flag .flag-item {
     display: table-cell;
-    padding: 0.16rem 0;
+    padding: .16rem 0;
     vertical-align: top;
-    background: #fff;
+    background-color: #fff;
+}
+.flag .flag-item img {
+    width: 2.4rem;
+    height: 2.4rem;
+    vertical-align: top;
+}
+.flag .flag-item.figcaption {
+    width: 133.333333rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    position: relative;
 }
 .flag .flag-item.figure {
     width: 2.346667rem;
     height: 2.346667rem;
 }
-.flag .flag-item.figure img {
-    max-width: 100%;
+.flag .flag-title a {
+    color: #333;
+    line-height: 1.25;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.flag .flag-price {
+    padding: .15rem 0 .2rem;
+}
+.flag .flag-price span {
+    display: inline-block;
+    background-color: #ee0a3b;
+    vertical-align: middle;
+    border-radius: .026667rem;
+    padding: .026667rem .08rem .013333rem;
+    color: #fff;
+    font-weight: 700;
+    margin-right: .066667rem;
+    font-size: 11px;
+}
+.flag .flag-price strong {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    color: #ee0a3b;
+    font-size: 16px;
+    margin-right: .16rem;
+}
+.flag .flag-price small {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    color: #ee0a3b;
+    font-size: 12px;
+}
+.flag .flag-type {
+    color: #ff3600;
+}
+.flag .flag-btn {
+    position: absolute;
+    width: 2.133333rem;
+    height: .64rem;
+    line-height: .64rem;
+    background-color: #ee0a3b;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    bottom: .133333rem;
+    right: .2rem;
+    border-radius: .026667rem;
 }

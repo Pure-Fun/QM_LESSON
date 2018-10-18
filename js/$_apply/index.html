@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="username"></div>
+        <div class="motto"></div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script> -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const eleUsername = document.querySelector('.username');
+        const eleMotto = document.querySelector('.motto');
+        // 浏览器嗅探
+        let xhr = null;  // 异步js主动拉取的核心对象 Ajax
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        // 页面， 打开一个去url .json资源的后端数据服务的通道
+        xhr.open('get','/dream.json',true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            // console.log(xhr.status);
+            if (xhr.readyState === 4 && xhr.status == 200) {
+                console.log(typeof xhr.responseText);
+                const dream = JSON.parse(xhr.responseText);
+                console.log(dream);
+                eleUsername.innerHTML = dream.username;
+                eleMotto.innerHTML = dream.motto;
+            }
+        }
+    });
+    /* const eleUsername = document.querySelector('username');
+    console.log(eleUsername); */
+    // $(function() {
+    //    /*  $('.username').html('颖宝'); */
+    //    $.getJSON('/dream.json', function(data) {
+    //        console.log(data);
+    //        $('.username').html(data.username);
+    //        $('.motto').html(data.motto);
+    //    })
+    // }); 
+    </script>
+</body>
+</html>

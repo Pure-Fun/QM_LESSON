@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="people">
+        <p>wex</p>
+        <p>Kait</p>
+        <p>Randy</p>
+    </div>
+    <script>
+    // 类数组
+    const people = Array.from(document.querySelectorAll('.people p'));
+    console.log(people);
+    const names = people.map(person => person.textContent);
+    console.log(names);
+    const deepDish = {
+        pizzaName: 'Deep Dish',
+        size: 'Medium',
+        ingredients: ['Marinara','Italian Sausage','Dough','cheese']
+    };
+    const shoppingList = ['Milk','Flour',...deepDish.ingredients];
+    console.log(shoppingList);
+    const team = ['科尔','库里','杜兰特','汤普森','格林','考辛斯','伊戈达拉'];
+    // 解构
+    const [captain, assistant, ...players] = team;
+    console.log(captain, assistant, players)
+    
+    /* const captain = team[0];  // 更不好的方法
+    const assistant = team[1];
+    const players = team.splice(2) */
+    </script>
+</body>
+</html>

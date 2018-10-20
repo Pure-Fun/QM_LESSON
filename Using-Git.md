@@ -10,7 +10,7 @@
     git add <指定文件.后缀名>   添加工作区中修改的指定文件到暂存区中
 
 - git commit :  提交更改，实际上就是把暂存区的所有内容提交到当前分支(本地仓库)
-    git commit -m 'xxxx'    xxxx是对本次提交的说明
+    git commit -m 'xxxx'    xxxx是对本次提交的说明(尽量用英文)
 
 - git push origin master    把本地提交push到远程仓库中去
 

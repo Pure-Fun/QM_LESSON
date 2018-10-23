@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="search-container">
+  <input type="text" placeholder="输入书名搜索"></input>
+  <icon type="search" size="20"/>
+</view>
+

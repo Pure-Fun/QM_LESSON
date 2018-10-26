@@ -7,16 +7,36 @@ Page({
   data: {
     userList: []
   },
-  getUserInfo: function(result) {
-    console.log(result);
+  onLoad: function () {
+    userInfo.get().then(res => {
+      this.setData({
+        userList: res.data
+      })
+    })
+  },
+  getUserInfo: function (result) {
+    // console.log(result);
     // openId 用户独有，云函数可以拿到，有几个接口
     wx.cloud.callFunction({
       name: 'getOpenId',
       complete: res => {
-        userInfo.add({
-          data: result.detail.userInfo
-        }).then(res => {
+        console.log(res);
+        let openid = res.result.openId
+        userInfo.where({
+          _openid: openid
+        }).count().then(res => {
           console.log(res);
+          if (res.total == 0) {
+            userInfo.add({
+              data: result.detail.userInfo
+            }).then(res => {
+              console.log(res);
+            })
+          } else {
+            wx.showToast({
+              title: '不能重复添加'
+            })
+          }
         })
         // console.log(res);
       }

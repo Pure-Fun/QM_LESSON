@@ -1,0 +1,4 @@
+/* miniprogram/pages/photo/photo.wxss */
+van-button {
+    background-color: green;
+}

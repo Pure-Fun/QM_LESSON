@@ -14,6 +14,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
+function isFunction(func) {
+  return typeof func === 'function' ? true : false;
+}
+
+export default {
+  formatTime: formatTime,
+  isFunction
 }

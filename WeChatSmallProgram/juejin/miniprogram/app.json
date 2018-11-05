@@ -1,0 +1,33 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/discover/discover",
+    "pages/me/me",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "write",
+    "navigationBarTitleText": "掘金活动",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "探索",
+        "navigationBarTitleText": "探索",
+        "iconPath": "images/icon/icon_discover.png",
+        "selectedIconPath": "images/icon/icon_discover_1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "navigationBarTitleText": "我",
+        "iconPath": "images/icon/icon_me.png",
+        "selectedIconPath": "images/icon/icon_me_1.png"
+      }
+    ]
+  }
+}

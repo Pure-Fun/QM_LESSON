@@ -1,0 +1,33 @@
+<!--miniprogram/pages/discover/discover.wxml-->
+<view class="flex-content">
+  <view class="flex-wrp">
+    <view class="flex-item activity {{currentIndex === 0?'on':''}}">
+      <text >活动列表</text>
+    </view>
+    <view class="flex-item collection {{currentIndex === 1?'on':''}}" bindtap="changeIndex">
+      <text >我的收藏</text>
+    </view>
+  </view>
+  <view class="flex-section">
+    <swiper class="section" indicator-dots="{{true}}" bindchange="swiperChange">
+      <swiper-item >
+        <view class="activity-list">
+          <view class="activity_one">
+            <image class="activity-img" src="../../images/WorkShop.jpg"/>
+            <text>WorkShop：产品经理小姐姐手把手教你</text>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item class="null_collection">
+        <view>
+          <image class="icon-img" src="../../images/icon/icon-jj.png" />
+        </view>
+        <view class="null_collection-title">
+          <text>没有活动</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+  

@@ -1,0 +1,24 @@
+<!--miniprogram/pages/me/me.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="show">
+    <view class="show-item show-yx">
+      <text>有效</text>
+    </view>
+    <view class="show-item show-ls">
+      <text>历史</text>
+    </view>
+  </view>
+  <view class="icon-img">
+    <image src="../../images/icon/icon-jj.png" />
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {  // 编译配置
+    "module": "es6",
+    "target": "es5"
+  }
+}

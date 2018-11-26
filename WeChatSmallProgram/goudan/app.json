@@ -3,7 +3,8 @@
     "pages/welcome/welcome",
     "pages/music/music",
     "pages/videos/videos",
-    "pages/review/review"
+    "pages/review/review",
+    "pages/videos/video-detail/video-detail"
   ],
   "window": {
     "backgroundTextStyle": "dark",

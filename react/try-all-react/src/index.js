@@ -27,7 +27,7 @@ class HelloUser extends React.Component {
     // return React.createElement('div', null, 'Hello World!');
   }
   handleChange(e) {
-    console.log(this);
+    console.log('aaaa' + this);
     this.setState({
       username: e.target.value
     })
@@ -35,7 +35,7 @@ class HelloUser extends React.Component {
   }
 }
 
-ReactDOM.render(<HelloUser />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

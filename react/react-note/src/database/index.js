@@ -1,5 +1,5 @@
 import Loki from 'lokijs';
-import { resolve } from 'url';
+// import { resolve } from 'url';
 
 export const db = new Loki('notes', {
   autoload: true,

@@ -35,6 +35,7 @@ class Notes extends Component {
     const noteItems = entities.map(entity => 
         <Note key={ entity.$loki }
         entity={ entity } 
+        destroyEntity={this.destroyEntity}
         />
       )
     return (
@@ -46,12 +47,40 @@ class Notes extends Component {
         <button className="ui right floated basic violet button" onClick={this.createEntity}>添加笔记</button>
         <div className="ui devided items">
           {noteItems}
+          { !entities.length && <span className="ui small disabled header">还没有笔记，请按下添加笔记按钮</span>}
         </div>
       </div>
     )
   }
   createEntity = () => {
     console.log(this);
+    loadCollection('notes')
+      .then((collection) => {
+        const entity = collection.insert({
+          body: ''
+        })
+        db.saveDatabase();
+        this.setState((prevstate) => {
+          const _entities = prevstate.entities
+          _entities.unshift(entity)
+          return {
+            entities: _entities
+          }
+        })
+      })
+  }
+  destroyEntity = (entity) => {
+    const _entities = this.state.entities.filter((_entity) => {
+      return _entity.$loki !== entity.$loki;
+    })
+    this.setState({
+      entities: _entities
+    })
+    loadCollection('notes')
+      .then(collection => {
+        collection.remove(entity);
+        db.saveDatabase();
+      })
   }
 }
 

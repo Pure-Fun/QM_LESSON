@@ -16,15 +16,15 @@ function buildUrl(url, data) {
   for (var k in data) {
     params.push(`${k}=${data[k]}`);
   }
-  console.log('params => ' + params);
+  // console.log('params => ' + params);
   let param = params.join("&");
-  console.log('param => ' + param);
+  // console.log('param => ' + param);
   if (url.indexOf("?") === -1) {
     url += "?" + param;
   } else {
     url += "&" + param;
   }
-  console.log('url => ' + url);
+  // console.log('url => ' + url);
   return url;
 }
 

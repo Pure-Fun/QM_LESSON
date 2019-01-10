@@ -18,11 +18,11 @@ class LifeCycle extends React.Component {
   }
   
   componentWillMount() {
-    console.log('component will mount');
+    console.log('componentWillMount：组件即将挂载');
   }
 
   componentDidMount() {
-    console.log('组件已经挂载了');
+    console.log('componentDidMount：组件已经挂载了');
     // UI ready 最快看到盒子，接着再取数据，不会阻塞
     fetch('https://api.github.com/users/shunwuyu')
     .then(data => data.json())
@@ -34,15 +34,15 @@ class LifeCycle extends React.Component {
   }
 
   componentWillUpdate() {
-    console.log('组件即将更新');
+    console.log('componentWillUpdate：组件即将更新');
   }
 
   componentDidUpdate() {
-    console.log('组件更新了');
+    console.log('componentDidUpdate：组件更新了');
   }
 
   componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
+    console.log('componentWillReceiveProps：组件即将接收Props');
   }
 
   // nextProps 新接受的，不是页面上已有的
@@ -50,14 +50,17 @@ class LifeCycle extends React.Component {
     if (nextProps.num === this.props.num) {
       console.log(nextProps);
       console.log(this.props.num);
-      console.log('值没有改变，不需要更新！');
+      console.log('shouldComponentUpdate：值没有改变，不需要更新！');
       return false
     }
+    console.log(nextProps);
+    console.log(this.props.num);
+    console.log('shouldComponentUpdate：值发生改变，即将更新！');
     return true;
   }
 
   componentWillUnmount() {
-    console.log('组件即将被卸载');
+    console.log('componentWillUnmount：组件即将被卸载');
   }
 
   render () {
